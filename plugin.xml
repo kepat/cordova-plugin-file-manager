@@ -10,6 +10,11 @@
     
     <repo>https://github.com/kepat/cordova-plugin-file-manager</repo>
 
+    <!-- javascript interface -->
+    <js-module src="www/FileManager.js" name="FileManager">
+        <clobbers target="fileManager" />
+    </js-module>
+
     <!-- frameworks supported -->
     <engines>
         <engine name="cordova" version=">=10.0.0"/>
