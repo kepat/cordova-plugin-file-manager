@@ -12,7 +12,7 @@
 
     <!-- javascript interface -->
     <js-module src="www/FileManager.js" name="FileManager">
-        <clobbers target="fileManager" />
+        <clobbers target="emobiq.fileManager" />
     </js-module>
 
     <!-- android -->
