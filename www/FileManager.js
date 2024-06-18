@@ -16,7 +16,7 @@ var fileManagerExport = {};
  */
 fileManagerExport.open = function (filePath, successCallback, errorCallback) {
     // Prepare the arguments to be passed to the native function
-    var args = [];
+    let args = [];
     args.push(getValue(filePath, "")); // File Path
 
     exec(successCallback, errorCallback, 'FileManager', 'open', args);
