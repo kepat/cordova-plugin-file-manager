@@ -42,6 +42,19 @@
         <framework src="src/android/gradle/build-extras.gradle" custom="true" type="gradleReference"/>
     </platform>
 
+    <!-- android -->
+    <platform name="ios">
+        <!-- feature -->
+       	<config-file target="config.xml" parent="/*">
+			<feature name="FileManager">
+				<param name="ios-package" value="FileManager" />
+			</feature>
+		</config-file>
+
+        <!-- source files -->
+        <source-file src="src/ios/FileManager.swift" />
+    </platform>
+
     <!-- frameworks supported -->
     <engines>
         <engine name="cordova" version=">=10.0.0"/>
