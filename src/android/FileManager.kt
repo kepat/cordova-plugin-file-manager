@@ -66,6 +66,8 @@ class FileManager : CordovaPlugin() {
 		intent.setDataAndType(fileUri, context.contentResolver.getType(fileUri))
 		// Start activity in a new task
 		intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+		// Add some flags to make sure it can access files
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
 		// Check if an app can handle the intent
 		if (intent.resolveActivity(context.packageManager) != null) {
