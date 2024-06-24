@@ -22,6 +22,19 @@
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
         </config-file>
 
+        <!-- Create the provider -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+            </provider>
+        </config-file>
+
         <!-- feature -->
         <config-file target="res/xml/config.xml" parent="/*">
             <!-- enable androidx and kotlin -->
@@ -37,6 +50,9 @@
         <!-- source files -->
         <source-file src="src/android/FileManager.kt" target-dir="java/com/kepat/cordova/file/manager" />
         <source-file src="src/android/Helper.kt" target-dir="java/com/kepat/cordova/file/manager" />
+
+        <!-- resource files -->
+        <resource-file src="src/android/xml/provider_paths.xml" target="res/xml/provider_paths.xml" />
 
         <!-- additonal gradle -->
         <framework src="src/android/gradle/build-extras.gradle" custom="true" type="gradleReference"/>
